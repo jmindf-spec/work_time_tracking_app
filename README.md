@@ -232,4 +232,14 @@ python -m unittest tests.test_database_manager
 - Подключение/отключение
 - CRUD операции
 - SQL запросы
-- Пример теста
+
+**Пример теста**
+```python
+def test_calculate_pay(self):
+    """Тест расчета заработной платы"""
+    employee = Employee("Иван Иванов", "Разработчик", 100000, hours_worked=40)
+    # Часовая ставка: 100000 / 160 = 625
+    # За 40 часов: 625 * 40 = 25000
+    expected_pay = (100000 / 160) * 40
+    self.assertEqual(employee.calculate_pay(), expected_pay)
+```
